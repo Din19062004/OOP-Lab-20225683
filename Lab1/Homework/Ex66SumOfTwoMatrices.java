@@ -8,30 +8,34 @@ public class SumOfTwoMatrices {
 		int row = sc.nextInt();
 		while(row <= 0) {
 			System.out.println("Must be greater than 0. Try again.");
+			System.out.println("Number of row(s): ");
+		        row = sc.nextInt();
 		}
 		System.out.println("Number of col(s): ");
 		int col = sc.nextInt();
 		while(col <= 0) {
 			System.out.println("Must be greater than 0. Try again.");
+			System.out.println("Number of col(s): ");
+		        col = sc.nextInt();
 		}
 		
 		System.out.println("Please enter the first matrix: ");
-		int matrix1[][] = new int[10][10];
+		double matrix1[][] = new double[10][10];
 		for(int i = 0; i < row; i++) {
 			for(int j = 0; j < col; j++) {
-				matrix1[i][j] = sc.nextInt();
+				matrix1[i][j] = sc.nextDouble();
 			}
 		}
 		
 		System.out.println("Please enter the second matrix: ");
-		int matrix2[][] = new int[10][10];
+		double matrix2[][] = new double[10][10];
 		for(int i = 0; i < row; i++) {
 			for(int j = 0; j < col; j++) {
-				matrix2[i][j] = sc.nextInt();
+				matrix2[i][j] = sc.nextDouble();
 			}
 		}
 		
-		int resultMatrix[][] = new int[10][10];
+		double resultMatrix[][] = new double[10][10];
 		for(int i = 0; i < row; i++) {
 			for(int j = 0; j < col; j++) {
 				resultMatrix[i][j] = matrix1[i][j] + matrix2[i][j];
@@ -41,9 +45,9 @@ public class SumOfTwoMatrices {
 		System.out.println("The sum of two entered matrices is: ");
 		for(int i = 0; i < row; i++) {
 			for(int j = 0; j < col; j++) {
-				System.out.printf("%d ", resultMatrix[i][j]);
+				System.out.print(resultMatrix[i][j] + " ");
 			}
-			System.out.printf("\n");
+			System.out.print("\n");
 		}
 		sc.close();
 	}
