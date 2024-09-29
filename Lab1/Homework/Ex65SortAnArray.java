@@ -53,6 +53,11 @@ public class SortAnArray {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Please enter the size of the array: ");
 		int arraySize = sc.nextInt();
+		while(arraySize <= 0) {
+			System.out.println("Must be a positive integer. Try again.");
+			System.out.println("Please enter the size of the array: ");
+		        arraySize = sc.nextInt();
+		}
 		
 		System.out.println("Please enter each element of the array: ");
 		double array[] = new double[50];
