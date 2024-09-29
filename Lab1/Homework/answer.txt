@@ -1,0 +1,13 @@
+1. If users choose "Cancel", method showConfirmDialog will return JOptionPane.CANCEL_OPTION. This means the condition (option == JOptionPain.YES_OPTION) is wrong and the Dialog will show the message: "You've choosen: No".
+2. To customize the to users, we use the method showOptionDialog instead of showConfirmDialog. Method showOptionDialog allows users to customize the dialog message's button (e.g. "Yes"/"No" or "I do"/"I don't"). Here's the demo code:
+
+import javax.swing.JOptionPane;
+public class ChoosingOption2 {
+	public static void main(String[] args) {
+		Object[] options = {"Yes", "No"}; // options = {"I do", "I don't"};
+		int option = JOptionPane.showOptionDialog(null, "Which options would you like to choose?", "Choose Option", 
+				JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+		String chosenOption = (option == JOptionPane.YES_OPTION)? "Yes" : "No";
+		JOptionPane.showMessageDialog(null, "You've chosen: "+ chosenOption);
+	}
+}
