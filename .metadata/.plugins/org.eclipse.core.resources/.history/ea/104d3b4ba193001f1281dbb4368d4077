@@ -1,0 +1,54 @@
+package AimsPackage;
+
+public class Cart {
+	public static final int MAX_NUMBERS_ORDERED = 20;
+	private DigitalVideoDisc itemOrdered[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
+	private int qtyOrdered = 0;
+	
+	public void addDigitalVideoDisc(DigitalVideoDisc disc) {
+		if(qtyOrdered < MAX_NUMBERS_ORDERED) {
+			this.itemOrdered[this.qtyOrdered++] = disc;
+			System.out.println("The disc has been added.");
+		}
+		else {
+			System.out.println("The cart is almost full!");
+		}
+	}
+	
+	public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
+		int index = -1;
+		if(this.qtyOrdered == 0) {
+			System.out.println("The cart is empty!");
+		}
+		else if(this.qtyOrdered > 0) {
+			for(int i = 0; i < this.qtyOrdered; i++) {
+				if(this.itemOrdered[i].equals(disc)) {
+					index = i;
+					break;
+				}
+			}
+			
+			if(index != -1) {
+				for(int i = index; i < qtyOrdered - 1; i++) {
+					this.itemOrdered[i] = this.itemOrdered[i + 1];
+				}
+				this.itemOrdered[this.qtyOrdered - 1] = null;
+				this.qtyOrdered--;
+				System.out.println("The disc has been removed.");
+			}
+			
+			else {
+				System.out.println("The disc is not in the cart!");
+			}
+			
+		}
+	}
+	
+	public double totalCost() {
+		double sum = 0;
+		for(int i = 0; i < this.qtyOrdered; i++) {
+			sum += this.itemOrdered[i].getCost();
+		}
+		return sum;
+	}
+}
