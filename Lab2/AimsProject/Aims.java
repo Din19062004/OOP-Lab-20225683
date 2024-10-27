@@ -11,11 +11,12 @@ public class Aims {
 		anOrder.addDigitalVideoDisc(dvd1);
 		anOrder.addDigitalVideoDisc(dvd2);
 		anOrder.addDigitalVideoDisc(dvd3);
-		
+
 		System.out.println("Total cost is: " + anOrder.totalCost());
-		anOrder.removeDigitalVideoDisc(dvd1);
-		anOrder.removeDigitalVideoDisc(dvd2);
-		anOrder.removeDigitalVideoDisc(dvd4);
-		anOrder.removeDigitalVideoDisc(dvd3);
+		//Test the method removeDigitalVideoDisc(DigitalVideoDisc disc)
+		anOrder.removeDigitalVideoDisc(dvd1);   //Remove dvd1 (successfully remove)
+		anOrder.removeDigitalVideoDisc(dvd2);   //Remove dvd2 (successfully remove)
+		anOrder.removeDigitalVideoDisc(dvd4);   //Remove dvd4 (not in the current cart)
+		anOrder.removeDigitalVideoDisc(dvd3);   //Remove dvd3 (successfully remove)
 	}
 }
