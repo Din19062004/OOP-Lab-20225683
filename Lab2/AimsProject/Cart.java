@@ -20,10 +20,10 @@ public class Cart {
 	
 	public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
 		int index = -1;
-		if(this.qtyOrdered == 0) {
+		if(this.qtyOrdered < 0) {
 			System.out.println("The cart is empty!");
 		}
-		else if(this.qtyOrdered > 0) {
+		else {
 			for(int i = 0; i < this.qtyOrdered; i++) {
 				if(this.itemOrdered[i].equals(disc)) {
 					index = i;
