@@ -13,6 +13,8 @@ public class Aims {
 		anOrder.addDigitalVideoDisc(dvd3);
 
 		System.out.println("Total cost is: " + anOrder.totalCost());
+		System.out.println();
+		
 		//Test the method removeDigitalVideoDisc(DigitalVideoDisc disc)
 		anOrder.removeDigitalVideoDisc(dvd1);   //Remove dvd1 (successfully remove)
 		anOrder.removeDigitalVideoDisc(dvd2);   //Remove dvd2 (successfully remove)
