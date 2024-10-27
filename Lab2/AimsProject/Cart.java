@@ -15,6 +15,7 @@ public class Cart {
 		}
 		else {
 			System.out.println("The cart is almost full!");
+			System.out.println();
 		}
 	}
 	
@@ -22,6 +23,7 @@ public class Cart {
 		int index = -1;
 		if(this.qtyOrdered < 0) {
 			System.out.println("The cart is empty!");
+			System.out.println();
 		}
 		else {
 			for(int i = 0; i < this.qtyOrdered; i++) {
@@ -38,10 +40,12 @@ public class Cart {
 				this.itemOrdered[this.qtyOrdered - 1] = null;
 				this.qtyOrdered--;
 				System.out.println("The disc has been removed.");
+				System.out.println();
 			}
 			
 			else {
 				System.out.println("The disc is not in the cart!");
+				System.out.println();
 			}
 			
 		}
@@ -55,3 +59,4 @@ public class Cart {
 		return sum;
 	}
 }
+
