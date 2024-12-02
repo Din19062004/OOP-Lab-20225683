@@ -1,0 +1,60 @@
+package hust.soict.hedspi.aims.cart;
+
+import hust.soict.hedspi.aims.media.*;
+
+import java.util.ArrayList;
+
+public class Cart {
+	private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+	
+	public void addMedia(Media media) {
+		if(itemsOrdered.contains(media)) {
+			System.out.println("Has already in the list!");
+		}
+		else {
+			itemsOrdered.add(media);
+			System.out.println("Add successfully!");
+		}
+	}
+	
+	public void removeMedia(Media media) {
+		if(itemsOrdered.contains(media)) {
+			itemsOrdered.remove(media);
+			System.out.println("Remove successfully");
+		}
+		else {
+			System.out.println("Not in the list yet!");
+		}
+	}
+	
+	public double totalCost() {
+		double sum = 0;
+		for(Media m : itemsOrdered) {
+			sum += m.getCost();
+		}
+		return sum;
+	}
+	
+	public void search(String keywords) {
+		int matchItem = 0;
+		for(Media m : itemsOrdered) {
+			if(m.isMatch(keywords)) {
+				System.out.println(m.toString());
+				matchItem++;
+			}
+		}
+		if(matchItem == 0) {
+			System.out.println("No item found!");
+		}
+	}
+	
+	public void print() {
+		System.out.println("Cart");
+		System.out.println("----------------------------");
+		for(Media m : itemsOrdered) {
+			System.out.println(m.toString());
+		}
+		System.out.println("----------------------------");
+	}
+}
+
